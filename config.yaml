@@ -1,0 +1,37 @@
+---
+time_out: 1    # периодичность выполнения скрипта в минутах,
+services:
+  source:
+    host: localhost
+    port: 5672
+    user: admin
+    password: adminPassword
+    queue:
+      name: cs-event-dwh-crash
+      durable: true
+      arguments:
+        x-queue-mode: lazy
+    workers: 2
+  destination:
+    host: localhost
+    user: pguser
+    password: 123
+    database: cs
+    queries:
+      - query: insert into cs_events.events(user_id, type, source, data) values %s
+        prepare_statement: (?,?,?,?)
+    workers: 3
+    bulk: 20
+  crash:
+    host: localhost
+    port: 5672
+    user: admin
+    password: adminPassword
+    exchange:
+      name: cs-event-exchange-crash
+      routing_key: dwh
+      type: topic
+      durable: true
+log:
+  path: ./dispatcher_rabbit_to_dwh.log
+  format: "%s.%s message: %s context: %s extra: %s"
