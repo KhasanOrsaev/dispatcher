@@ -146,7 +146,6 @@ func main() {
 
 func handleError(shortMessage string, err error, add *map[string]interface{}, fatal bool) {
 	conf := config.GetConfig()
-	fmt.Println(shortMessage)
 	if fatal {
 		log.Fatalf(conf.Log.Format, "dispatcher_rabbit_to_dwh", "error", shortMessage, err.Error(), "")
 	} else {
