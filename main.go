@@ -46,11 +46,7 @@ func main() {
 		c := config.GetConfig()
 		timeStart := time.Now()
 		wgDispatcher := sync.WaitGroup{}
-		// канал ошибок
-		errChannel := make(chan error,10)
-		go func(errChannel <- chan error) {
-			handleError("Ошибка в сервисах", <-errChannel, nil, false)
-		}(errChannel)
+
 		// ----------------- инициализация источника ----------------------------
 		sourceClient = source.NewClient()
 		// временный костыль, надеюсь (конфиги буду подтягивать с сервиса настроек)
@@ -97,10 +93,19 @@ func main() {
 		}
 		// ----------------- завершение инициализации аварийки ----------------------------
 
-		wgDispatcher.Add(4)
+		wgDispatcher.Add(5)
 		inputChannel := make(chan map[interface{}][]byte, 10)
 		confirmChannel := make(chan interface{}, 10)
 		crashChannel := make(chan []byte, 1)
+		errChannel := make(chan error,10)
+
+		// канал ошибок
+		go func(errChannel <- chan error) {
+			defer wgDispatcher.Done()
+			for e := range errChannel {
+				handleError("Ошибка в сервисах", e, nil, false)
+			}
+		}(errChannel)
 		go func() {
 			defer wgDispatcher.Done()
 			sourceClient.ReadData(inputChannel,errChannel)
