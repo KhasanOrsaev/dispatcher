@@ -7,7 +7,7 @@ services:
     user: admin
     password: adminPassword
     queue:
-      name: cs-event-dwh-crash
+      name: cs-event-dwh
       durable: true
       arguments:
         x-queue-mode: lazy
