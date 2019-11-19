@@ -1,0 +1,12 @@
+git.fin-dev.ru/scm/dmp/dispatcher-interface.git v1.0.1 h1:OTrLinisq9uYz7TPRmFniZrKyupt/7Zg1ZZE9Kwwm3o=
+git.fin-dev.ru/scm/dmp/dispatcher-interface.git v1.0.1/go.mod h1:k9CZsNd8sLOHA5y2wM4i96VPnDQ7GCVy+QLqBoE1Zc0=
+git.fin-dev.ru/scm/dmp/dwh_client.git v1.0.1 h1:DEZoM+yvAyUS0EUDkZEglOLPKx2ub2F2iPfCN8iVObQ=
+git.fin-dev.ru/scm/dmp/dwh_client.git v1.0.1/go.mod h1:bri3GTi7oecbLaO6voiuOp2EE1zWkqPdHKasgSS8tyE=
+git.fin-dev.ru/scm/dmp/rabbitmq_client.git v1.0.1 h1:yPMkHvlWzoJ2S3xmAY1xffb522n7thITQoo1/WnpyWE=
+git.fin-dev.ru/scm/dmp/rabbitmq_client.git v1.0.1/go.mod h1:uGa2lg8daKThR2UuioR2SuQOAOi38/3hWmyUFKaTqgA=
+github.com/go-errors/errors v1.0.1/go.mod h1:f4zRHt4oKfwPJE5k8C9vpYG+aDHdBFUsgrm6/TyX73Q=
+github.com/lib/pq v1.2.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
+github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271 h1:WhxRHzgeVGETMlmVfqhRn8RIeeNoPr2Czh33I4Zdccw=
+github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.2.5/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
