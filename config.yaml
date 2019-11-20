@@ -2,7 +2,7 @@
 time_out: 1    # периодичность выполнения скрипта в минутах,
 services:
   source:
-    host: localhost
+    host: 192.168.88.166
     port: 5672
     user: admin
     password: adminPassword
@@ -13,7 +13,7 @@ services:
         x-queue-mode: lazy
     workers: 2
   destination:
-    host: localhost
+    host: 192.168.88.166
     user: pguser
     password: 123
     database: cs
@@ -23,7 +23,7 @@ services:
     workers: 3
     bulk: 20
   crash:
-    host: localhost
+    host: 192.168.88.166
     port: 5672
     user: admin
     password: adminPassword
