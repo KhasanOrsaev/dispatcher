@@ -1,0 +1,12 @@
+---
+time_out: {n minutes}    # периодичность выполнения скрипта в минутах,
+services:
+  source:
+    {source configuration} # конфигурация источника в соответствии с описанием в модуле
+  destination:
+    {destination configuration} # конфигурация назначения в соответствии с описанием в модуле
+  crash:
+    {crash configuration} # конфигурация аварийки в соответствии с описанием в модуле
+log:
+  path: {path} # куда писать логи
+  format: {format} # шаблон логов

@@ -114,6 +114,7 @@ func main() {
 
 		go func() {
 			defer wgDispatcher.Done()
+			defer close(errChannel) // закрываем канал ошибок после подтверждения всех записей
 			sourceClient.Confirm(confirmChannel,errChannel)
 			err = sourceClient.CloseConnection()
 			if err != nil {
